@@ -1,0 +1,6 @@
+"STARTUP.obj",
+"delay.obj",
+"music.obj",
+"通用定时器.obj" 
+TO "通用定时器" 
+RAMSIZE(256) 

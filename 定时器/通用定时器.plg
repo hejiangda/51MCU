@@ -1,0 +1,16 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\GitHub\51MCU\定时器\通用定时器.uvproj
+Project File Date:  02/07/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 通用定时器.c...
+通用定时器.c(1): warning C500: LICENSE ERROR (R207(3): REGISTRY READ ERROR)
+linking...
+Program Size: data=42.0 xdata=0 code=842
+creating hex file from "通用定时器"...
+"通用定时器" - 0 Error(s), 1 Warning(s).
