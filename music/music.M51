@@ -1,0 +1,196 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/07/2016  11:30:16  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, music.obj TO music RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  music.obj (MUSIC)
+
+
+LINK MAP OF MODULE:  music (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+            DATA    000BH     0002H     UNIT         ?DT?MUSIC
+            IDATA   000DH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     0444H     UNIT         ?CO?MUSIC
+            CODE    0C44H     00A9H     UNIT         ?PR?MAIN?MUSIC
+            CODE    0CEDH     0023H     UNIT         ?PR?_DELAY?MUSIC
+            CODE    0D10H     000DH     UNIT         ?PR?TIMER0?MUSIC
+            CODE    0D1DH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   music (?C_STARTUP)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MUSIC
+
+?PR?MAIN?MUSIC                 0008H    0003H
+  +--> ?CO?MUSIC
+  +--> ?PR?_DELAY?MUSIC
+
+
+
+SYMBOL TABLE OF MODULE:  music (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/07/2016  11:30:16  PAGE 2
+
+
+  C:0D1DH         SEGMENT       ?C_C51STARTUP
+  I:000DH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0D20H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0D1DH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0D1DH         LINE#         133
+  C:0D1FH         LINE#         134
+  C:0D20H         LINE#         135
+  C:0D21H         LINE#         136
+  C:0D23H         LINE#         185
+  C:0D26H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MUSIC
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0800H         PUBLIC        m_note
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0C44H         PUBLIC        main
+  C:0D10H         PUBLIC        Timer0
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  B:0090H.2       PUBLIC        BUZZER
+  D:00C8H         PUBLIC        T2CON
+  C:0CEDH         PUBLIC        _Delay
+  D:000BH         PUBLIC        time_h
+  C:084AH         PUBLIC        display
+  D:00D0H         PUBLIC        PSW
+  D:000CH         PUBLIC        time_l
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/07/2016  11:30:16  PAGE 3
+
+
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        j
+  D:0009H         SYMBOL        i
+  -------         ENDDO         
+  C:0C44H         LINE#         122
+  C:0C44H         LINE#         123
+  C:0C44H         LINE#         126
+  C:0C47H         LINE#         127
+  C:0C49H         LINE#         128
+  C:0C4BH         LINE#         129
+  C:0C4DH         LINE#         130
+  C:0C52H         LINE#         131
+  C:0C54H         LINE#         132
+  C:0C54H         LINE#         133
+  C:0C54H         LINE#         134
+  C:0C6DH         LINE#         135
+  C:0C6DH         LINE#         136
+  C:0C7CH         LINE#         137
+  C:0C7CH         LINE#         138
+  C:0C7EH         LINE#         139
+  C:0C81H         LINE#         140
+  C:0C83H         LINE#         141
+  C:0C85H         LINE#         143
+  C:0C85H         LINE#         144
+  C:0CAAH         LINE#         145
+  C:0CBAH         LINE#         146
+  C:0CBDH         LINE#         147
+  C:0CC0H         LINE#         148
+  C:0CC2H         LINE#         149
+  C:0CC4H         LINE#         150
+  C:0CD4H         LINE#         151
+  C:0CD6H         LINE#         152
+  C:0CD8H         LINE#         153
+  C:0CDAH         LINE#         154
+  C:0CDAH         LINE#         155
+  C:0CE2H         LINE#         156
+  C:0CE5H         LINE#         157
+  C:0CEAH         LINE#         158
+  -------         ENDPROC       MAIN
+  -------         PROC          TIMER0
+  C:0D10H         LINE#         161
+  C:0D10H         LINE#         163
+  C:0D12H         LINE#         164
+  C:0D15H         LINE#         165
+  C:0D18H         LINE#         166
+  C:0D1AH         LINE#         167
+  C:0D1CH         LINE#         168
+  -------         ENDPROC       TIMER0
+  -------         PROC          _DELAY
+  D:0007H         SYMBOL        x
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0CEDH         LINE#         170
+  C:0CEDH         LINE#         171
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/07/2016  11:30:16  PAGE 4
+
+
+  C:0CEDH         LINE#         173
+  C:0CFAH         LINE#         174
+  C:0D0FH         LINE#         175
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        MUSIC
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 052FH BYTE (64%) *
+******************************************************************************
+
+Program Size: data=14.0 xdata=0 code=1327
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
