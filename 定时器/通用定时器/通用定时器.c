@@ -82,7 +82,8 @@ void main(){
     }
     end1:;
   }
-
+  P0=0xff;
+  P2=0xff;
   if(1==mode_key){
     DelaySec(num_key);
   }else if (2==mode_key){
@@ -96,6 +97,8 @@ void main(){
     P2|=~LED1[apply_key];
     P2=~P2;
     P0=LED[2];
+    P0=0xff;
+    P2=0xff;
     DelayMin(10);
   }
   flag=1;
@@ -113,7 +116,8 @@ void Timer1_isr(void) interrupt 3 using 1
  if (1==flag){
    j++;
    P0=LED[j];       //LED闪烁
-   if(7==j){
+   P2=LED[j];
+   if(8==j){
      j=0;
    }
   }

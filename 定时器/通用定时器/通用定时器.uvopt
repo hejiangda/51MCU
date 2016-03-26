@@ -226,10 +226,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>12</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>78</TopLine>
+      <CurrentLine>101</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\通用定时器.c</PathWithFileName>
       <FilenameWithoutPath>通用定时器.c</FilenameWithoutPath>

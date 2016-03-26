@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        02/07/2016  08:39:01  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/16/2016  09:01:19  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -37,21 +37,21 @@ LINK MAP OF MODULE:  通用定时器 (?C_STARTUP)
                     000EH     000DH                  *** GAP ***
             CODE    001BH     0003H     ABSOLUTE     
                     001EH     07E2H                  *** GAP ***
-            CODE    0800H     00F2H     UNIT         ?PR?MAIN?__________
-            CODE    08F2H     009EH     UNIT         ?CO?MUSIC
-            CODE    0990H     008CH     UNIT         ?C_C51STARTUP
-            CODE    0A1CH     0047H     UNIT         ?PR?MUSIC?MUSIC
-            CODE    0A63H     0029H     UNIT         ?PR?TIMER1_ISR?__________
-            CODE    0A8CH     0020H     UNIT         ?C_INITSEG
-            CODE    0AACH     001BH     UNIT         ?PR?_DELAYMS?DELAY
-            CODE    0AC7H     001AH     UNIT         ?PR?_DELAY?MUSIC
-            CODE    0AE1H     0012H     UNIT         ?PR?_DELAYMIN?DELAY
-            CODE    0AF3H     0012H     UNIT         ?PR?_DELAYSEC?DELAY
-            CODE    0B05H     0010H     UNIT         ?PR?_DELAYHOR?DELAY
-            CODE    0B15H     000FH     UNIT         ?PR?INIT_TIMER1?__________
-            CODE    0B24H     000DH     UNIT         ?PR?SONG?MUSIC
-            CODE    0B31H     000DH     UNIT         ?PR?TIM0_ISR?MUSIC
-            CODE    0B3EH     0003H     UNIT         ?PR?_DELAYUS2X?DELAY
+            CODE    0800H     00FEH     UNIT         ?PR?MAIN?__________
+            CODE    08FEH     009EH     UNIT         ?CO?MUSIC
+            CODE    099CH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0A28H     0047H     UNIT         ?PR?MUSIC?MUSIC
+            CODE    0A6FH     002BH     UNIT         ?PR?TIMER1_ISR?__________
+            CODE    0A9AH     0020H     UNIT         ?C_INITSEG
+            CODE    0ABAH     001BH     UNIT         ?PR?_DELAYMS?DELAY
+            CODE    0AD5H     001AH     UNIT         ?PR?_DELAY?MUSIC
+            CODE    0AEFH     0012H     UNIT         ?PR?_DELAYMIN?DELAY
+            CODE    0B01H     0012H     UNIT         ?PR?_DELAYSEC?DELAY
+            CODE    0B13H     0010H     UNIT         ?PR?_DELAYHOR?DELAY
+            CODE    0B23H     000FH     UNIT         ?PR?INIT_TIMER1?__________
+            CODE    0B32H     000DH     UNIT         ?PR?SONG?MUSIC
+            CODE    0B3FH     000DH     UNIT         ?PR?TIM0_ISR?MUSIC
+            CODE    0B4CH     0003H     UNIT         ?PR?_DELAYUS2X?DELAY
 
 
 
@@ -59,7 +59,7 @@ OVERLAY MAP OF MODULE:   通用定时器 (?C_STARTUP)
 
 
 SEGMENT                              DATA_GROUP 
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/07/2016  08:39:01  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/16/2016  09:01:19  PAGE 2
 
 
   +--> CALLED SEGMENT              START    LENGTH
@@ -110,7 +110,7 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   ----------------------------------
 
   -------         MODULE        ?C_STARTUP
-  C:0990H         SEGMENT       ?C_C51STARTUP
+  C:099CH         SEGMENT       ?C_C51STARTUP
   I:0029H         SEGMENT       ?STACK
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
@@ -119,11 +119,11 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   D:0082H         SYMBOL        DPL
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/07/2016  08:39:01  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/16/2016  09:01:19  PAGE 3
 
 
   N:0080H         SYMBOL        IDATALEN
-  C:0993H         SYMBOL        IDATALOOP
+  C:099FH         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
@@ -132,18 +132,18 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:0990H         SYMBOL        STARTUP1
+  C:099CH         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
-  C:0990H         LINE#         133
-  C:0992H         LINE#         134
-  C:0993H         LINE#         135
-  C:0994H         LINE#         136
-  C:0996H         LINE#         185
-  C:0999H         LINE#         196
+  C:099CH         LINE#         133
+  C:099EH         LINE#         134
+  C:099FH         LINE#         135
+  C:09A0H         LINE#         136
+  C:09A2H         LINE#         185
+  C:09A5H         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
   -------         MODULE        DELAY
@@ -151,60 +151,60 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
-  C:0AF3H         PUBLIC        _DelaySec
-  C:0AE1H         PUBLIC        _DelayMin
+  C:0B01H         PUBLIC        _DelaySec
+  C:0AEFH         PUBLIC        _DelayMin
   D:00B8H         PUBLIC        IP
-  C:0B05H         PUBLIC        _DelayHor
-  C:0AACH         PUBLIC        _DelayMs
+  C:0B13H         PUBLIC        _DelayHor
+  C:0ABAH         PUBLIC        _DelayMs
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:0B3EH         PUBLIC        _DelayUs2x
+  C:0B4CH         PUBLIC        _DelayUs2x
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          _DELAYUS2X
   D:0007H         SYMBOL        t
-  C:0B3EH         LINE#         10
-  C:0B3EH         LINE#         11
-  C:0B3EH         LINE#         12
-  C:0B40H         LINE#         13
+  C:0B4CH         LINE#         10
+  C:0B4CH         LINE#         11
+  C:0B4CH         LINE#         12
+  C:0B4EH         LINE#         13
   -------         ENDPROC       _DELAYUS2X
   -------         PROC          _DELAYMS
   D:0004H         SYMBOL        t
-  C:0AACH         LINE#         19
-  C:0AB0H         LINE#         20
-  C:0AB0H         LINE#         22
-  C:0ABAH         LINE#         23
-  C:0ABAH         LINE#         25
-  C:0ABFH         LINE#         26
-  C:0AC4H         LINE#         27
-  C:0AC6H         LINE#         28
+  C:0ABAH         LINE#         19
+  C:0ABEH         LINE#         20
+  C:0ABEH         LINE#         22
+  C:0AC8H         LINE#         23
+  C:0AC8H         LINE#         25
+  C:0ACDH         LINE#         26
+  C:0AD2H         LINE#         27
+  C:0AD4H         LINE#         28
   -------         ENDPROC       _DELAYMS
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/07/2016  08:39:01  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/16/2016  09:01:19  PAGE 4
 
 
   -------         PROC          _DELAYMIN
   D:0003H         SYMBOL        t
-  C:0AE1H         LINE#         30
-  C:0AE3H         LINE#         31
-  C:0AE9H         LINE#         32
-  C:0AF0H         LINE#         33
-  C:0AF2H         LINE#         34
+  C:0AEFH         LINE#         30
+  C:0AF1H         LINE#         31
+  C:0AF7H         LINE#         32
+  C:0AFEH         LINE#         33
+  C:0B00H         LINE#         34
   -------         ENDPROC       _DELAYMIN
   -------         PROC          _DELAYSEC
   D:0003H         SYMBOL        t
-  C:0AF3H         LINE#         35
-  C:0AF5H         LINE#         36
-  C:0AFBH         LINE#         37
-  C:0B02H         LINE#         38
-  C:0B04H         LINE#         39
+  C:0B01H         LINE#         35
+  C:0B03H         LINE#         36
+  C:0B09H         LINE#         37
+  C:0B10H         LINE#         38
+  C:0B12H         LINE#         39
   -------         ENDPROC       _DELAYSEC
   -------         PROC          _DELAYHOR
   D:0002H         SYMBOL        t
-  C:0B05H         LINE#         40
-  C:0B07H         LINE#         41
-  C:0B0DH         LINE#         42
-  C:0B12H         LINE#         43
-  C:0B14H         LINE#         44
+  C:0B13H         LINE#         40
+  C:0B15H         LINE#         41
+  C:0B1BH         LINE#         42
+  C:0B20H         LINE#         43
+  C:0B22H         LINE#         44
   -------         ENDPROC       _DELAYHOR
   -------         ENDMOD        DELAY
 
@@ -215,11 +215,11 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   B:00A8H.7       PUBLIC        EA
   D:00A8H         PUBLIC        IE
   D:0021H         PUBLIC        Time
-  C:0AC7H         PUBLIC        _delay
-  C:0B24H         PUBLIC        Song
+  C:0AD5H         PUBLIC        _delay
+  C:0B32H         PUBLIC        Song
   D:00B8H         PUBLIC        IP
-  C:0A1CH         PUBLIC        music
-  C:08F2H         PUBLIC        MUSIC1
+  C:0A28H         PUBLIC        music
+  C:08FEH         PUBLIC        MUSIC1
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
@@ -231,62 +231,62 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   D:0023H         PUBLIC        Timer0_L
   D:00C8H         PUBLIC        T2CON
   D:0024H         PUBLIC        i
-  C:0B31H         PUBLIC        TIM0_ISR
+  C:0B3FH         PUBLIC        TIM0_ISR
   D:0025H         PUBLIC        k
   B:0090H.2       PUBLIC        SPK
-  C:0958H         PUBLIC        FREQH
+  C:0964H         PUBLIC        FREQH
   D:00D0H         PUBLIC        PSW
-  C:0974H         PUBLIC        FREQL
+  C:0980H         PUBLIC        FREQL
   -------         PROC          MUSIC
-  C:0A1CH         LINE#         8
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/07/2016  08:39:01  PAGE 5
+  C:0A28H         LINE#         8
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/16/2016  09:01:19  PAGE 5
 
 
-  C:0A1CH         LINE#         9
-  C:0A1CH         LINE#         10
-  C:0A1FH         LINE#         11
-  C:0A21H         LINE#         12
-  C:0A23H         LINE#         15
-  C:0A23H         LINE#         16
-  C:0A23H         LINE#         17
-  C:0A26H         LINE#         18
-  C:0A2DH         LINE#         19
-  C:0A2DH         LINE#         20
-  C:0A42H         LINE#         21
-  C:0A48H         LINE#         22
-  C:0A50H         LINE#         23
-  C:0A58H         LINE#         24
-  C:0A5EH         LINE#         25
-  C:0A61H         LINE#         26
+  C:0A28H         LINE#         9
+  C:0A28H         LINE#         10
+  C:0A2BH         LINE#         11
+  C:0A2DH         LINE#         12
+  C:0A2FH         LINE#         15
+  C:0A2FH         LINE#         16
+  C:0A2FH         LINE#         17
+  C:0A32H         LINE#         18
+  C:0A39H         LINE#         19
+  C:0A39H         LINE#         20
+  C:0A4EH         LINE#         21
+  C:0A54H         LINE#         22
+  C:0A5CH         LINE#         23
+  C:0A64H         LINE#         24
+  C:0A6AH         LINE#         25
+  C:0A6DH         LINE#         26
   -------         ENDPROC       MUSIC
   -------         PROC          _DELAY
   D:0026H         SYMBOL        t
   -------         DO            
   D:0027H         SYMBOL        i
   -------         ENDDO         
-  C:0AC7H         LINE#         31
-  C:0AC9H         LINE#         32
-  C:0AC9H         LINE#         34
-  C:0AD3H         LINE#         35
-  C:0ADEH         LINE#         36
-  C:0AE0H         LINE#         37
+  C:0AD5H         LINE#         31
+  C:0AD7H         LINE#         32
+  C:0AD7H         LINE#         34
+  C:0AE1H         LINE#         35
+  C:0AECH         LINE#         36
+  C:0AEEH         LINE#         37
   -------         ENDPROC       _DELAY
   -------         PROC          SONG
-  C:0B24H         LINE#         39
-  C:0B24H         LINE#         40
-  C:0B24H         LINE#         41
-  C:0B27H         LINE#         42
-  C:0B2AH         LINE#         43
-  C:0B2CH         LINE#         44
+  C:0B32H         LINE#         39
+  C:0B32H         LINE#         40
+  C:0B32H         LINE#         41
+  C:0B35H         LINE#         42
+  C:0B38H         LINE#         43
+  C:0B3AH         LINE#         44
   -------         ENDPROC       SONG
   -------         PROC          TIM0_ISR
-  C:0B31H         LINE#         47
-  C:0B31H         LINE#         49
-  C:0B33H         LINE#         50
-  C:0B35H         LINE#         51
-  C:0B38H         LINE#         52
-  C:0B3BH         LINE#         53
-  C:0B3DH         LINE#         54
+  C:0B3FH         LINE#         47
+  C:0B3FH         LINE#         49
+  C:0B41H         LINE#         50
+  C:0B43H         LINE#         51
+  C:0B46H         LINE#         52
+  C:0B49H         LINE#         53
+  C:0B4BH         LINE#         54
   -------         ENDPROC       TIM0_ISR
   -------         ENDMOD        MUSIC
 
@@ -299,7 +299,7 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   B:00A8H.7       PUBLIC        EA
   D:0010H         PUBLIC        LED1
   D:00A8H         PUBLIC        IE
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/07/2016  08:39:01  PAGE 6
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/16/2016  09:01:19  PAGE 6
 
 
   D:00B8H         PUBLIC        IP
@@ -307,7 +307,7 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   D:0013H         PUBLIC        flag
   B:00B0H.7       PUBLIC        KEY2
   C:0800H         PUBLIC        main
-  C:0B15H         PUBLIC        Init_Timer1
+  C:0B23H         PUBLIC        Init_Timer1
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
@@ -319,20 +319,20 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   D:0016H         PUBLIC        apply_key
   D:0017H         PUBLIC        LED
   B:0088H.6       PUBLIC        TR1
-  C:0A63H         PUBLIC        Timer1_isr
+  C:0A6FH         PUBLIC        Timer1_isr
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   D:0020H         PUBLIC        num_key
   -------         PROC          INIT_TIMER1
-  C:0B15H         LINE#         15
-  C:0B15H         LINE#         16
-  C:0B15H         LINE#         17
-  C:0B18H         LINE#         18
-  C:0B1BH         LINE#         19
-  C:0B1DH         LINE#         20
-  C:0B1FH         LINE#         21
-  C:0B21H         LINE#         22
-  C:0B23H         LINE#         23
+  C:0B23H         LINE#         15
+  C:0B23H         LINE#         16
+  C:0B23H         LINE#         17
+  C:0B26H         LINE#         18
+  C:0B29H         LINE#         19
+  C:0B2BH         LINE#         20
+  C:0B2DH         LINE#         21
+  C:0B2FH         LINE#         22
+  C:0B31H         LINE#         23
   -------         ENDPROC       INIT_TIMER1
   -------         PROC          MAIN
   -------         DO            
@@ -359,7 +359,7 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   C:0835H         LINE#         42
   C:0838H         LINE#         43
   C:0838H         LINE#         44
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/07/2016  08:39:01  PAGE 7
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/16/2016  09:01:19  PAGE 7
 
 
   C:0840H         LINE#         45
@@ -398,48 +398,53 @@ SYMBOL TABLE OF MODULE:  通用定时器 (?C_STARTUP)
   C:08A4H         LINE#         81
   C:08A4H         LINE#         82
   C:08A4H         LINE#         83
-  C:08A4H         LINE#         86
-  C:08A9H         LINE#         87
-  C:08AEH         LINE#         88
-  C:08B5H         LINE#         89
-  C:08B7H         LINE#         90
-  C:08BEH         LINE#         91
-  C:08C3H         LINE#         92
-  C:08CBH         LINE#         93
-  C:08CEH         LINE#         94
-  C:08D5H         LINE#         95
-  C:08D8H         LINE#         96
-  C:08E1H         LINE#         97
-  C:08E4H         LINE#         98
-  C:08E7H         LINE#         99
-  C:08ECH         LINE#         100
-  C:08ECH         LINE#         101
-  C:08EFH         LINE#         102
+  C:08A4H         LINE#         85
+  C:08A7H         LINE#         86
+  C:08AAH         LINE#         87
+  C:08AFH         LINE#         88
+  C:08B4H         LINE#         89
+  C:08BBH         LINE#         90
+  C:08BDH         LINE#         91
+  C:08C4H         LINE#         92
+  C:08C9H         LINE#         93
+  C:08D1H         LINE#         94
+  C:08D4H         LINE#         95
+  C:08DBH         LINE#         96
+  C:08DEH         LINE#         97
+  C:08E7H         LINE#         98
+  C:08EAH         LINE#         99
+  C:08EDH         LINE#         100
+  C:08F0H         LINE#         101
+  C:08F3H         LINE#         102
+  C:08F8H         LINE#         103
+  C:08F8H         LINE#         104
+  C:08FBH         LINE#         105
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/16/2016  09:01:19  PAGE 8
+
+
   -------         ENDPROC       MAIN
   -------         PROC          TIMER1_ISR
   -------         DO            
   D:0028H         SYMBOL        j
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/07/2016  08:39:01  PAGE 8
-
-
   -------         ENDDO         
-  C:0A63H         LINE#         108
-  C:0A6AH         LINE#         111
-  C:0A6DH         LINE#         112
-  C:0A70H         LINE#         113
-  C:0A75H         LINE#         114
-  C:0A77H         LINE#         115
-  C:0A7FH         LINE#         116
-  C:0A84H         LINE#         117
-  C:0A87H         LINE#         118
-  C:0A87H         LINE#         119
-  C:0A87H         LINE#         120
+  C:0A6FH         LINE#         111
+  C:0A76H         LINE#         114
+  C:0A79H         LINE#         115
+  C:0A7CH         LINE#         116
+  C:0A81H         LINE#         117
+  C:0A83H         LINE#         118
+  C:0A8BH         LINE#         119
+  C:0A8DH         LINE#         120
+  C:0A92H         LINE#         121
+  C:0A95H         LINE#         122
+  C:0A95H         LINE#         123
+  C:0A95H         LINE#         124
   -------         ENDPROC       TIMER1_ISR
   -------         ENDMOD        __________
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 02C9H BYTE (34%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 02D7H BYTE (35%) *
 ******************************************************************************
 
-Program Size: data=42.0 xdata=0 code=842
+Program Size: data=42.0 xdata=0 code=856
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

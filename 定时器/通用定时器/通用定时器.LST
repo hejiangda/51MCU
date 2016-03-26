@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   __________                                                        02/07/2016 08:39:00 PAGE 1   
+C51 COMPILER V9.52.0.0   __________                                                        02/16/2016 08:47:00 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE __________
@@ -63,7 +63,7 @@ line level    source
   51   6                  if (60==num_key){
   52   7                    num_key=0;
   53   7                  }
-C51 COMPILER V9.52.0.0   __________                                                        02/07/2016 08:39:00 PAGE 2   
+C51 COMPILER V9.52.0.0   __________                                                        02/16/2016 08:47:00 PAGE 2   
 
   54   6                  P2=255-num_key;
   55   6                  P2=~P2;
@@ -96,48 +96,52 @@ line level    source
   82   3          }
   83   2          end1:;
   84   2        }
-  85   1      
-  86   1        if(1==mode_key){
-  87   2          DelaySec(num_key);
-  88   2        }else if (2==mode_key){
-  89   2          DelayMin(num_key);
-  90   2        }else if (3==mode_key){
-  91   2          DelayHor(num_key);
-  92   2        }else if (4==mode_key){
-  93   2          num_key=10;
-  94   2          P2=255-num_key;
-  95   2          P2=~P2;
-  96   2          P2|=~LED1[apply_key];
-  97   2          P2=~P2;
-  98   2          P0=LED[2];
-  99   2          DelayMin(10);
- 100   2        }
- 101   1        flag=1;
- 102   1        music();
- 103   1      }
- 104          
- 105          /*------------------------------------------------
- 106                           定时器中断子程序
- 107          ------------------------------------------------*/
- 108          void Timer1_isr(void) interrupt 3 using 1
- 109          {
- 110   1        char j;
- 111   1       TH1=0x00;     //重新赋值
- 112   1       TL1=0x00;
- 113   1       if (1==flag){
- 114   2         j++;
- 115   2         P0=LED[j];       //LED闪烁
-C51 COMPILER V9.52.0.0   __________                                                        02/07/2016 08:39:00 PAGE 3   
+  85   1        P0=0xff;
+  86   1        P2=0xff;
+  87   1        if(1==mode_key){
+  88   2          DelaySec(num_key);
+  89   2        }else if (2==mode_key){
+  90   2          DelayMin(num_key);
+  91   2        }else if (3==mode_key){
+  92   2          DelayHor(num_key);
+  93   2        }else if (4==mode_key){
+  94   2          num_key=10;
+  95   2          P2=255-num_key;
+  96   2          P2=~P2;
+  97   2          P2|=~LED1[apply_key];
+  98   2          P2=~P2;
+  99   2          P0=LED[2];
+ 100   2          P0=0xff;
+ 101   2          P2=0xff;
+ 102   2          DelayMin(10);
+ 103   2        }
+ 104   1        flag=1;
+ 105   1        music();
+ 106   1      }
+ 107          
+ 108          /*------------------------------------------------
+ 109                           定时器中断子程序
+ 110          ------------------------------------------------*/
+ 111          void Timer1_isr(void) interrupt 3 using 1
+ 112          {
+ 113   1        char j;
+ 114   1       TH1=0x00;     //重新赋值
+ 115   1       TL1=0x00;
+C51 COMPILER V9.52.0.0   __________                                                        02/16/2016 08:47:00 PAGE 3   
 
- 116   2         if(7==j){
- 117   3           j=0;
- 118   3         }
- 119   2        }
- 120   1      }
+ 116   1       if (1==flag){
+ 117   2         j++;
+ 118   2         P0=LED[j];       //LED闪烁
+ 119   2         P2=LED[j];
+ 120   2         if(8==j){
+ 121   3           j=0;
+ 122   3         }
+ 123   2        }
+ 124   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    298    ----
+   CODE SIZE        =    312    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

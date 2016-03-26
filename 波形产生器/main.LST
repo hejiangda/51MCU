@@ -1,0 +1,117 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              03/25/2016 21:14:41 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          // 题目三    信号发生器
+   2          // 何江达    2016/3/24/14:56
+   3          #include <reg52.h>
+   4          sbit KEY1=P3^6;  //加
+   5          sbit KEY2=P3^7;  //减
+   6          sbit OUT=P1^0;  //输出
+   7          unsigned int n=0;
+   8          void Init_Timer1(void);
+   9          void Init_Timer0(void);
+  10          void DelayUs2x(unsigned char t);
+  11          void DelayMs(unsigned int t);
+  12          unsigned int t1;
+  13          unsigned int t2;
+  14          unsigned int a=500;
+  15          unsigned int sum=1000;
+  16          
+  17          void main(void){
+  18   1        while(1){
+  19   2          P2=~n;
+  20   2          t1=(65536-(sum-a)*n)/256;
+  21   2          t2=(65536-a*n)%256;
+  22   2          if(!KEY1){
+  23   3            DelayMs(10);
+  24   3              if(!KEY1){
+  25   4                while(!KEY1);
+  26   4                if(n!=100){
+  27   5                  n++;
+  28   5                  Init_Timer0();
+  29   5                }else{
+  30   5                  n=1;
+  31   5                }
+  32   4              }else {
+  33   4              DelayMs(500);
+  34   4              if(!KEY1){
+  35   5                while(!KEY1);
+  36   5                  a=a+100;
+  37   5                  if(a==1100){
+  38   6                    a=0;
+  39   6                  }
+  40   5                }
+  41   4              }
+  42   3            }
+  43   2          if(!KEY2){
+  44   3            DelayMs(10);
+  45   3            if(!KEY2){
+  46   4              while(!KEY2);
+  47   4              if(n!=1){
+  48   5                n--;
+  49   5                Init_Timer0();
+  50   5              }else{
+  51   5                n=100;
+  52   5              }
+  53   4            }else DelayMs(500);
+  54   3            if(!KEY2){
+  55   4              a=a-100;
+C51 COMPILER V9.52.0.0   MAIN                                                              03/25/2016 21:14:41 PAGE 2   
+
+  56   4              if(a==0){
+  57   5                a=1000;
+  58   5              }
+  59   4            }
+  60   3          }
+  61   2        }
+  62   1      }
+  63          
+  64          void Init_Timer0(void){
+  65   1        TMOD|=0x01;
+  66   1        TH0=t1;
+  67   1        TL0=t2;
+  68   1        EA=1;
+  69   1        ET0=1;
+  70   1        TR0=1;
+  71   1      }
+  72          
+  73          void Timer0_isr(void) interrupt 1 using 1{
+  74   1        TH0=t1;
+  75   1        TL0=t2;
+  76   1        OUT=~OUT;
+  77   1      }
+  78          
+  79          void DelayUs2x(unsigned char t){
+  80   1        while(--t);
+  81   1      }
+  82          
+  83          void DelayMs(unsigned int t){
+  84   1        while(t--){
+  85   2           //大致延时1mS
+  86   2         DelayUs2x(245);
+  87   2         DelayUs2x(245);
+  88   2        }
+  89   1      }
+  90          void key(void){
+  91   1      
+  92   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    325    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -32,9 +32,19 @@ void main() {
   /* code */
   P0=0x00;
   P2=0x00;
+   /* while(1){
+    SPK=0;
+     DelayUs2x(100);
+     SPK=1;
+     DelayUs2x(100);
+  }*/
+  
+
   key();
   P0=0xff;
   P2=0xff;
+
+
   if(happy==0){
     P0=0xfe;
     DelayMin(25);
@@ -46,8 +56,14 @@ void main() {
   P2=0xff;
   // DelayMin(1);
   // DelayMs(6000);
-  music();
-
+  // music();
+  while(1){
+    SPK=0;
+     DelayUs2x(100);
+     SPK=1;
+     DelayUs2x(100);
+  }
+  
   // DelayMin(1);
 }
 
@@ -109,7 +125,7 @@ void music(){
   /*---------------------------*/
    {
 
-   unsigned char k,i,j;
+   unsigned char k,i;
    TMOD|=0x01; //置定时器0工作方式1
    EA=1;       //打开全局中断
    ET0=1;      //打开定时0中断
