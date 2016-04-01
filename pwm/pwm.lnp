@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"main.obj" 
+TO "pwm" 
+RAMSIZE(256) 
